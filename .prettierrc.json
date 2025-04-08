@@ -1,0 +1,14 @@
+{
+  "tabWidth": 2,
+  "cache": true,
+  "semi": true,
+  "singleQuote": true,
+  "ignore": [
+    "node_modules",
+    "dist"
+  ],
+  "trailingComma": "all",
+  "plugins": [
+    "prettier-plugin-tailwindcss"
+  ]
+}
