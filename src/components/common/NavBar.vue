@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="w-full px-[15px] pt-[15px] flex items-center gap-[5vw] justify-center bg-white border-b border-softDark/20 lg:justify-start lg:px-[60px] lg:pt-[25px] max-h-[46px] lg:max-h-[56px]">
+    class="w-full px-[10px] md:px-[20px]  pt-[15px] flex items-center gap-[5vw] bg-white border-b border-softDark/20 justify-start lg:px-[60px] lg:pt-[15px] max-h-[48px] lg:h-[48px] lg:max-h-[48px]">
     <LinkButton :icon="FileIcon" :to="{ name: 'cvAnalysis' }" :is-selected="route.name === 'cvAnalysis'">
       <span class="lg:hidden">CV</span>
       <span class="hidden lg:block">CV Analysis</span>
