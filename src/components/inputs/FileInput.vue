@@ -8,7 +8,7 @@
       <CheckIcon v-if="fileSelected" :is-blue="true" class="w-[40px] h-[40px] md:w-[45px] md:h-[45px]" />
       <UploadIcon v-else :is-blue="true" class="w-[40px] h-[40px] md:w-[45px] md:h-[45px]" />
       <h4 class="text-dark text-[0.9rem] md:text-[1rem]">
-        {{ fileSelected ? 'Click, to change file' : 'Click, to choosefile' }}
+        {{ fileSelected ? 'Click, to change file' : 'Click, to choose file' }}
       </h4>
       <h5 class="text-softDark text-[0.7rem] md:text-[0.8rem]">{{ description }}</h5>
       <span v-if="fileSelected"

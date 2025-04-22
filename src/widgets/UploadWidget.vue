@@ -1,8 +1,10 @@
 <template>
-  <BaseCard :title="title" :icon="icon">
+  <BaseCard v-if="title || icon" :title="title" :icon="icon">
     <FileInput :name="inputName" :file-types="inputFileTypes" :description="description" :file-selected="fileSelected"
       @change-action="() => { fileSelected = true }" />
   </BaseCard>
+  <FileInput v-else :name="inputName" :file-types="inputFileTypes" :description="description"
+    :file-selected="fileSelected" @change-action="() => { fileSelected = true }" />
 </template>
 
 <script setup lang="ts">
@@ -13,7 +15,7 @@ import { ref, type Ref } from 'vue';
 defineProps({
   title: {
     type: String,
-    required: true,
+    required: false,
   },
   icon: {
     type: Object,

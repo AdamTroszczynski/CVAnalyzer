@@ -1,10 +1,10 @@
 <template>
   <PageHeader />
   <NavBar />
-  <main>
+  <main class="min-h-[calc(100%-96px)] flex flex-col justify-between">
     <RouterView />
+    <MainFooter />
   </main>
-  <MainFooter />
 </template>
 
 <script setup lang="ts">

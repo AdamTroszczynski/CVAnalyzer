@@ -6,10 +6,10 @@
     </div>
 
     <div class="flex flex-col gap-[15px] md:flex-row md:gap-[30px]">
-      <UploadWidget :title="'Upload CV'" :icon="FileIcon" :input-name="'cvInput'" :input-file-types="'.pdf, .docx'"
+      <UploadWidget :title="'Upload CV'" :icon="FileIcon" :input-name="'homePageCv'" :input-file-types="'.pdf, .docx'"
         :description="'PDF, DOCX'" />
-      <UploadWidget :title="'Upload Offer'" :icon="JobsIcon" :input-name="'offerInput'" :input-file-types="'.pdf, .txt'"
-        :description="'PDF, TXT'" />
+      <UploadWidget :title="'Upload Offer'" :icon="JobsIcon" :input-name="'homePageOffer'"
+        :input-file-types="'.pdf, .txt'" :description="'PDF, TXT'" />
     </div>
 
     <div class="flex flex-col gap-[20px] md:flex-row">
@@ -42,20 +42,20 @@ const selectedSchema: Ref<number> = ref(0)
 
 const cvValidationSchema = toTypedSchema(
   z.object({
-    cvInput: z.instanceof(File)
+    homePageCv: z.instanceof(File)
   })
 );
 
 const offerValidationSchema = toTypedSchema(
   z.object({
-    offerInput: z.instanceof(File)
+    homePageOffer: z.instanceof(File)
   })
 );
 
 const matchValidationSchema = toTypedSchema(
   z.object({
-    cvInput: z.instanceof(File),
-    offerInput: z.instanceof(File)
+    homePageCv: z.instanceof(File),
+    homePageOffer: z.instanceof(File)
   })
 );
 
