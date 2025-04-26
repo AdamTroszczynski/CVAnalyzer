@@ -1,28 +1,36 @@
 <template>
   <section class="p-[15px] flex flex-col font-mulish md:p-[20px] lg:px-[60px] bg-grey gap-[35px] md:gap-[55px]">
     <div class="flex flex-col gap-[5px]">
-      <h1 class="text-dark text-[1.6rem] font-bold md:text-[1.8rem]">Hello, User!</h1>
-      <h2 class="text-softDark font-medium text-[0.9rem] md:text-[1rem]">Start analysis your CV and job offer.</h2>
+      <h1 class="text-dark text-[1.6rem] font-bold md:text-[1.8rem]">Witaj, User!</h1>
+      <h2 class="text-softDark font-medium text-[0.9rem] md:text-[1rem] w-max">Rozpocznij analizę swojego CV i oferty
+        pracy.
+      </h2>
     </div>
 
     <div class="flex flex-col gap-[15px] md:flex-row md:gap-[30px]">
       <UploadWidget :title="'Upload CV'" :icon="FileIcon" :input-name="'homePageCv'" :input-file-types="'.pdf, .docx'"
         :description="'PDF, DOCX'" />
-      <UploadWidget :title="'Upload Offer'" :icon="JobsIcon" :input-name="'homePageOffer'"
+      <UploadWidget :title="'Upload Oferty'" :icon="JobsIcon" :input-name="'homePageOffer'"
         :input-file-types="'.pdf, .txt'" :description="'PDF, TXT'" />
     </div>
 
     <div class="flex flex-col gap-[20px] md:flex-row">
       <BaseButton @click-action="cvAnalysisClick">
-        <FileIcon class="w-[17px] h-[17px]" />CV Analysis
+        <FileIcon class="w-[17px] h-[17px]" />Analiza CV
       </BaseButton>
       <BaseButton @click-action="offerAnalysisClick">
-        <JobsIcon class="w-[17px] h-[17px]" />Offer Analysis
+        <JobsIcon class="w-[17px] h-[17px]" />Analiza oferty pracy
       </BaseButton>
       <BaseButton @click-action="matchAnalysisClick">
-        <MatchIcon class="w-[17px] h-[17px]" />Match Analysis
+        <MatchIcon class="w-[17px] h-[17px]" />Dopasowanie CV do oferty
       </BaseButton>
     </div>
+
+    <BaseCard :title="'Ostatnie Analizy'">
+      <RecordCard :id="'1'" :title="'Senior Developer'" :date="'12.01.2025'" :result="67" :type="'cv'" />
+      <RecordCard :id="'2'" :title="'Project Manager'" :date="'10.01.2025'" :result="75" :type="'offer'" />
+      <RecordCard :id="'3'" :title="'Senior architect'" :date="'10.01.2025'" :result="75" :type="'match'" />
+    </BaseCard>
 
   </section>
 </template>
@@ -37,6 +45,8 @@ import { toTypedSchema } from '@vee-validate/zod';
 import z from 'zod';
 import { computed, ref, type Ref } from 'vue';
 import { useForm, type TypedSchema } from 'vee-validate';
+import BaseCard from '@/components/cards/BaseCard.vue';
+import RecordCard from '@/components/cards/RecordCard.vue';
 
 const selectedSchema: Ref<number> = ref(0)
 

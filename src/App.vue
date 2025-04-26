@@ -1,7 +1,7 @@
 <template>
   <PageHeader />
   <NavBar />
-  <main class="min-h-[calc(100%-96px)] flex flex-col justify-between">
+  <main class="min-h-[calc(100%-96px)] flex flex-col justify-between md:min-h-[calc(100%-119px)]">
     <RouterView />
     <MainFooter />
   </main>

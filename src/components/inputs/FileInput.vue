@@ -2,20 +2,20 @@
   <div
     class="border relative w-full py-[40px] rounded-[12px] border-dashed flex justify-center items-center md:py-[50px]"
     :class="errorMessage ? 'border-red' : 'border-softDark/40'">
-    <input @change="changeInput" type="file" class="absolute opacity-0 w-full h-full cursor-pointer" :name="name"
-      :accept="fileTypes" />
-    <div class="flex flex-col justify-center items-center">
+    <input @change="changeInput" :id="name" type="file" class="absolute opacity-0 w-full h-full cursor-pointer"
+      :name="name" :accept="fileTypes" />
+    <label :for="name" class="flex flex-col justify-center items-center">
       <CheckIcon v-if="fileSelected" :is-blue="true" class="w-[40px] h-[40px] md:w-[45px] md:h-[45px]" />
       <UploadIcon v-else :is-blue="true" class="w-[40px] h-[40px] md:w-[45px] md:h-[45px]" />
       <h4 class="text-dark text-[0.9rem] md:text-[1rem]">
-        {{ fileSelected ? 'Click, to change file' : 'Click, to choose file' }}
+        {{ fileSelected ? 'Kliknij, aby zmienić plik' : 'Kliknij, aby wybrać plik' }}
       </h4>
       <h5 class="text-softDark text-[0.7rem] md:text-[0.8rem]">{{ description }}</h5>
       <span v-if="fileSelected"
         class="absolute text-[0.8rem] font-medium mt-[30px] bottom-[10px] text-black/80 md:text-[0.9rem]">
         {{ value?.name }}
       </span>
-    </div>
+    </label>
   </div>
 </template>
 
